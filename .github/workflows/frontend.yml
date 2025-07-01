@@ -21,11 +21,11 @@ jobs:
 
       - name: Install dependencies
         run: npm install
-        working-directory: ./wms_frontend
+        working-directory: ./wms_frontend  # ✅ ตรวจชื่อโฟลเดอร์ให้ถูก
 
       - name: Build Vite Project with Production Env
         run: npm run build
-        working-directory: ./wms_frontend
+        working-directory: ./wms_frontend  # ✅ ต้องตรงกับที่มี package.json
 
       - name: Deploy to Azure Static Web App
         uses: Azure/static-web-apps-deploy@v1
@@ -33,5 +33,5 @@ jobs:
           azure_static_web_apps_api_token: ${{ secrets.AZURE_STATIC_WEB_APPS_API_TOKEN }}
           repo_token: ${{ secrets.GITHUB_TOKEN }}
           action: "upload"
-          app_location: "/wms_frontend"      # ✅ โฟลเดอร์ที่มี package.json
-          output_location: "dist"            # ✅ โฟลเดอร์ผลลัพธ์จาก Vite build
+          app_location: "/wms_frontend"     # ✅ โฟลเดอร์ frontend
+          output_location: "dist"
