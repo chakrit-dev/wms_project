@@ -29,6 +29,6 @@ jobs:
       - name: 🚀 Deploy to Azure App Service
         uses: azure/webapps-deploy@v2
         with:
-          app-name: logistics-fastapi
+          app-name: wms-backend-api  # ✅ ใช้ชื่อ App Service จริง
           publish-profile: ${{ secrets.AZURE_WEBAPP_PUBLISH_PROFILE }}
           package: .
