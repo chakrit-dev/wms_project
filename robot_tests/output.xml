@@ -1,0 +1,306 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<robot generator="Robot 7.3.1 (Python 3.13.3 on win32)" generated="2025-06-19T02:20:06.245185" rpa="false" schemaversion="5">
+<suite id="s1" name="Register Test" source="D:\Development\wms_project\robot_tests\tests\register_test.robot">
+<kw name="Open Browser" owner="SeleniumLibrary" type="SETUP">
+<msg time="2025-06-19T02:20:06.564915" level="INFO">Opening browser 'chrome' to base url 'http://localhost:5173/register'.</msg>
+<arg>${REGISTER_URL}</arg>
+<arg>${BROWSER}</arg>
+<doc>Opens a new browser instance to the optional ``url``.</doc>
+<status status="PASS" start="2025-06-19T02:20:06.564638" elapsed="1.718761"/>
+</kw>
+<test id="s1-t1" name="TC-RE002 สมัครด้วยอีเมลซ้ำ" line="12">
+<kw name="Go To" owner="SeleniumLibrary" type="SETUP">
+<msg time="2025-06-19T02:20:08.288163" level="INFO">Opening url 'http://localhost:5173/register'</msg>
+<arg>${REGISTER_URL}</arg>
+<doc>Navigates the current browser window to the provided ``url``.</doc>
+<status status="PASS" start="2025-06-19T02:20:08.287839" elapsed="0.161237"/>
+</kw>
+<kw name="Generate Unique Email" owner="utils">
+<kw name="Get Time" owner="BuiltIn">
+<msg time="2025-06-19T02:20:08.450594" level="INFO">${timestamp} = 1750274408</msg>
+<var>${timestamp}</var>
+<arg>epoch</arg>
+<doc>Returns the given time in the requested format.</doc>
+<status status="PASS" start="2025-06-19T02:20:08.450259" elapsed="0.000393"/>
+</kw>
+<kw name="Set Variable" owner="BuiltIn">
+<msg time="2025-06-19T02:20:08.451162" level="INFO">${email} = testuser.1750274408@wms.com</msg>
+<var>${email}</var>
+<arg>testuser.${timestamp}@wms.com</arg>
+<doc>Returns the given values which can then be assigned to a variables.</doc>
+<status status="PASS" start="2025-06-19T02:20:08.450852" elapsed="0.000380"/>
+</kw>
+<return>
+<value>${email}</value>
+<status status="PASS" start="2025-06-19T02:20:08.451355" elapsed="0.000091"/>
+</return>
+<msg time="2025-06-19T02:20:08.451693" level="INFO">${duplicate_email} = testuser.1750274408@wms.com</msg>
+<var>${duplicate_email}</var>
+<status status="PASS" start="2025-06-19T02:20:08.449779" elapsed="0.001969"/>
+</kw>
+<kw name="Generate Unique Username" owner="utils">
+<kw name="Get Time" owner="BuiltIn">
+<msg time="2025-06-19T02:20:08.452591" level="INFO">${timestamp} = 1750274408</msg>
+<var>${timestamp}</var>
+<arg>epoch</arg>
+<doc>Returns the given time in the requested format.</doc>
+<status status="PASS" start="2025-06-19T02:20:08.452388" elapsed="0.000235"/>
+</kw>
+<kw name="Set Variable" owner="BuiltIn">
+<msg time="2025-06-19T02:20:08.452911" level="INFO">${username} = user1750274408</msg>
+<var>${username}</var>
+<arg>user${timestamp}</arg>
+<doc>Returns the given values which can then be assigned to a variables.</doc>
+<status status="PASS" start="2025-06-19T02:20:08.452737" elapsed="0.000208"/>
+</kw>
+<return>
+<value>${username}</value>
+<status status="PASS" start="2025-06-19T02:20:08.453009" elapsed="0.000066"/>
+</return>
+<msg time="2025-06-19T02:20:08.453216" level="INFO">${username1} = user1750274408</msg>
+<var>${username1}</var>
+<status status="PASS" start="2025-06-19T02:20:08.452129" elapsed="0.001118"/>
+</kw>
+<kw name="Generate Unique Username" owner="utils">
+<kw name="Get Time" owner="BuiltIn">
+<msg time="2025-06-19T02:20:08.453871" level="INFO">${timestamp} = 1750274408</msg>
+<var>${timestamp}</var>
+<arg>epoch</arg>
+<doc>Returns the given time in the requested format.</doc>
+<status status="PASS" start="2025-06-19T02:20:08.453703" elapsed="0.000199"/>
+</kw>
+<kw name="Set Variable" owner="BuiltIn">
+<msg time="2025-06-19T02:20:08.454167" level="INFO">${username} = user1750274408</msg>
+<var>${username}</var>
+<arg>user${timestamp}</arg>
+<doc>Returns the given values which can then be assigned to a variables.</doc>
+<status status="PASS" start="2025-06-19T02:20:08.454012" elapsed="0.000185"/>
+</kw>
+<return>
+<value>${username}</value>
+<status status="PASS" start="2025-06-19T02:20:08.454256" elapsed="0.000042"/>
+</return>
+<msg time="2025-06-19T02:20:08.454443" level="INFO">${username2} = user1750274408</msg>
+<var>${username2}</var>
+<status status="PASS" start="2025-06-19T02:20:08.453489" elapsed="0.000986"/>
+</kw>
+<kw name="Go To" owner="SeleniumLibrary">
+<msg time="2025-06-19T02:20:08.454819" level="INFO">Opening url 'http://localhost:5173/register'</msg>
+<arg>${REGISTER_URL}</arg>
+<doc>Navigates the current browser window to the provided ``url``.</doc>
+<status status="PASS" start="2025-06-19T02:20:08.454690" elapsed="0.123963"/>
+</kw>
+<kw name="Clear Local Storage" owner="utils">
+<kw name="Execute Javascript" owner="SeleniumLibrary">
+<msg time="2025-06-19T02:20:08.582079" level="INFO">Executing JavaScript:
+window.localStorage.clear()
+Without any arguments.</msg>
+<arg>window.localStorage.clear()</arg>
+<doc>Executes the given JavaScript code with possible arguments.</doc>
+<status status="PASS" start="2025-06-19T02:20:08.581692" elapsed="0.005498"/>
+</kw>
+<status status="PASS" start="2025-06-19T02:20:08.581281" elapsed="0.006057"/>
+</kw>
+<kw name="Reload Page" owner="SeleniumLibrary">
+<doc>Simulates user reloading page.</doc>
+<status status="PASS" start="2025-06-19T02:20:08.587612" elapsed="0.143189"/>
+</kw>
+<kw name="Wait Until Element Is Visible" owner="SeleniumLibrary">
+<arg>xpath=//input[@placeholder='First Name']</arg>
+<arg>timeout=10s</arg>
+<doc>Waits until the element ``locator`` is visible.</doc>
+<status status="PASS" start="2025-06-19T02:20:08.731256" elapsed="0.030625"/>
+</kw>
+<kw name="Input Text" owner="SeleniumLibrary">
+<msg time="2025-06-19T02:20:08.762506" level="INFO">Typing text 'ชาคริต' into text field 'xpath=//input[@placeholder='First Name']'.</msg>
+<arg>xpath=//input[@placeholder='First Name']</arg>
+<arg>${REGISTER_FIRSTNAME}</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<status status="PASS" start="2025-06-19T02:20:08.762235" elapsed="0.156533"/>
+</kw>
+<kw name="Input Text" owner="SeleniumLibrary">
+<msg time="2025-06-19T02:20:08.919923" level="INFO">Typing text 'เตชะศิลปภักดี' into text field 'xpath=//input[@placeholder='Last Name']'.</msg>
+<arg>xpath=//input[@placeholder='Last Name']</arg>
+<arg>${REGISTER_LASTNAME}</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<status status="PASS" start="2025-06-19T02:20:08.919540" elapsed="0.160498"/>
+</kw>
+<kw name="Input Text" owner="SeleniumLibrary">
+<msg time="2025-06-19T02:20:09.080968" level="INFO">Typing text '0909619296' into text field 'xpath=//input[@placeholder='Phone Number']'.</msg>
+<arg>xpath=//input[@placeholder='Phone Number']</arg>
+<arg>${REGISTER_PHONE}</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<status status="PASS" start="2025-06-19T02:20:09.080516" elapsed="0.134960"/>
+</kw>
+<kw name="Input Text" owner="SeleniumLibrary">
+<msg time="2025-06-19T02:20:09.216424" level="INFO">Typing text 'testuser.1750274408@wms.com' into text field 'xpath=//input[@placeholder='Valid Email Address']'.</msg>
+<arg>xpath=//input[@placeholder='Valid Email Address']</arg>
+<arg>${duplicate_email}</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<status status="PASS" start="2025-06-19T02:20:09.216026" elapsed="0.241385"/>
+</kw>
+<kw name="Input Text" owner="SeleniumLibrary">
+<msg time="2025-06-19T02:20:09.458060" level="INFO">Typing text 'user1750274408' into text field 'xpath=//input[@placeholder='Create a Username']'.</msg>
+<arg>xpath=//input[@placeholder='Create a Username']</arg>
+<arg>${username1}</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<status status="PASS" start="2025-06-19T02:20:09.457753" elapsed="0.099315"/>
+</kw>
+<kw name="Input Text" owner="SeleniumLibrary">
+<msg time="2025-06-19T02:20:09.558061" level="INFO">Typing text '666666' into text field 'xpath=//input[@placeholder='Create a Password']'.</msg>
+<arg>xpath=//input[@placeholder='Create a Password']</arg>
+<arg>${REGISTER_PASSWORD}</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<status status="PASS" start="2025-06-19T02:20:09.557744" elapsed="0.115918"/>
+</kw>
+<kw name="Input Text" owner="SeleniumLibrary">
+<msg time="2025-06-19T02:20:09.674455" level="INFO">Typing text '666666' into text field 'xpath=//input[@placeholder='Confirm Password']'.</msg>
+<arg>xpath=//input[@placeholder='Confirm Password']</arg>
+<arg>${REGISTER_CONFIRM_PASS}</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<status status="PASS" start="2025-06-19T02:20:09.674196" elapsed="0.118850"/>
+</kw>
+<kw name="Select From List By Label" owner="SeleniumLibrary">
+<msg time="2025-06-19T02:20:09.793757" level="INFO">Selecting options from selection list 'xpath=//select' by label Warehouse.</msg>
+<arg>xpath=//select</arg>
+<arg>${REGISTER_ROLE}</arg>
+<doc>Selects options from selection list ``locator`` by ``labels``.</doc>
+<status status="PASS" start="2025-06-19T02:20:09.793486" elapsed="0.115874"/>
+</kw>
+<kw name="Click Button" owner="SeleniumLibrary">
+<msg time="2025-06-19T02:20:09.910335" level="INFO">Clicking button 'xpath=//button[normalize-space()='Create Account']'.</msg>
+<arg>xpath=//button[normalize-space()='Create Account']</arg>
+<doc>Clicks the button identified by ``locator``.</doc>
+<status status="PASS" start="2025-06-19T02:20:09.909935" elapsed="0.097349"/>
+</kw>
+<kw name="Wait Until Element Is Visible" owner="SeleniumLibrary">
+<arg>xpath=//input[@placeholder='Username']</arg>
+<arg>timeout=10s</arg>
+<doc>Waits until the element ``locator`` is visible.</doc>
+<status status="PASS" start="2025-06-19T02:20:10.008127" elapsed="2.547252"/>
+</kw>
+<kw name="Go To" owner="SeleniumLibrary">
+<msg time="2025-06-19T02:20:12.556051" level="INFO">Opening url 'http://localhost:5173/register'</msg>
+<arg>${REGISTER_URL}</arg>
+<doc>Navigates the current browser window to the provided ``url``.</doc>
+<status status="PASS" start="2025-06-19T02:20:12.555786" elapsed="0.131647"/>
+</kw>
+<kw name="Clear Local Storage" owner="utils">
+<kw name="Execute Javascript" owner="SeleniumLibrary">
+<msg time="2025-06-19T02:20:12.688852" level="INFO">Executing JavaScript:
+window.localStorage.clear()
+Without any arguments.</msg>
+<arg>window.localStorage.clear()</arg>
+<doc>Executes the given JavaScript code with possible arguments.</doc>
+<status status="PASS" start="2025-06-19T02:20:12.688276" elapsed="0.018603"/>
+</kw>
+<status status="PASS" start="2025-06-19T02:20:12.687848" elapsed="0.019196"/>
+</kw>
+<kw name="Reload Page" owner="SeleniumLibrary">
+<doc>Simulates user reloading page.</doc>
+<status status="PASS" start="2025-06-19T02:20:12.707394" elapsed="0.129613"/>
+</kw>
+<kw name="Wait Until Element Is Visible" owner="SeleniumLibrary">
+<arg>xpath=//input[@placeholder='First Name']</arg>
+<arg>timeout=10s</arg>
+<doc>Waits until the element ``locator`` is visible.</doc>
+<status status="PASS" start="2025-06-19T02:20:12.837446" elapsed="0.023991"/>
+</kw>
+<kw name="Input Text" owner="SeleniumLibrary">
+<msg time="2025-06-19T02:20:12.862013" level="INFO">Typing text 'ชาคริต' into text field 'xpath=//input[@placeholder='First Name']'.</msg>
+<arg>xpath=//input[@placeholder='First Name']</arg>
+<arg>${REGISTER_FIRSTNAME}</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<status status="PASS" start="2025-06-19T02:20:12.861770" elapsed="0.118645"/>
+</kw>
+<kw name="Input Text" owner="SeleniumLibrary">
+<msg time="2025-06-19T02:20:12.983639" level="INFO">Typing text 'เตชะศิลปภักดี' into text field 'xpath=//input[@placeholder='Last Name']'.</msg>
+<arg>xpath=//input[@placeholder='Last Name']</arg>
+<arg>${REGISTER_LASTNAME}</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<status status="PASS" start="2025-06-19T02:20:12.983248" elapsed="0.160606"/>
+</kw>
+<kw name="Input Text" owner="SeleniumLibrary">
+<msg time="2025-06-19T02:20:13.144696" level="INFO">Typing text '0909619296' into text field 'xpath=//input[@placeholder='Phone Number']'.</msg>
+<arg>xpath=//input[@placeholder='Phone Number']</arg>
+<arg>${REGISTER_PHONE}</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<status status="PASS" start="2025-06-19T02:20:13.144374" elapsed="0.140135"/>
+</kw>
+<kw name="Input Text" owner="SeleniumLibrary">
+<msg time="2025-06-19T02:20:13.285681" level="INFO">Typing text 'testuser.1750274408@wms.com' into text field 'xpath=//input[@placeholder='Valid Email Address']'.</msg>
+<arg>xpath=//input[@placeholder='Valid Email Address']</arg>
+<arg>${duplicate_email}</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<status status="PASS" start="2025-06-19T02:20:13.285444" elapsed="0.230146"/>
+</kw>
+<kw name="Input Text" owner="SeleniumLibrary">
+<msg time="2025-06-19T02:20:13.516201" level="INFO">Typing text 'user1750274408' into text field 'xpath=//input[@placeholder='Create a Username']'.</msg>
+<arg>xpath=//input[@placeholder='Create a Username']</arg>
+<arg>${username2}</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<status status="PASS" start="2025-06-19T02:20:13.515910" elapsed="0.098174"/>
+</kw>
+<kw name="Input Text" owner="SeleniumLibrary">
+<msg time="2025-06-19T02:20:13.614813" level="INFO">Typing text '666666' into text field 'xpath=//input[@placeholder='Create a Password']'.</msg>
+<arg>xpath=//input[@placeholder='Create a Password']</arg>
+<arg>${REGISTER_PASSWORD}</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<status status="PASS" start="2025-06-19T02:20:13.614494" elapsed="0.087825"/>
+</kw>
+<kw name="Input Text" owner="SeleniumLibrary">
+<msg time="2025-06-19T02:20:13.703069" level="INFO">Typing text '666666' into text field 'xpath=//input[@placeholder='Confirm Password']'.</msg>
+<arg>xpath=//input[@placeholder='Confirm Password']</arg>
+<arg>${REGISTER_CONFIRM_PASS}</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<status status="PASS" start="2025-06-19T02:20:13.702737" elapsed="0.117586"/>
+</kw>
+<kw name="Select From List By Label" owner="SeleniumLibrary">
+<msg time="2025-06-19T02:20:13.821166" level="INFO">Selecting options from selection list 'xpath=//select' by label Warehouse.</msg>
+<arg>xpath=//select</arg>
+<arg>${REGISTER_ROLE}</arg>
+<doc>Selects options from selection list ``locator`` by ``labels``.</doc>
+<status status="PASS" start="2025-06-19T02:20:13.820761" elapsed="0.080488"/>
+</kw>
+<kw name="Click Button" owner="SeleniumLibrary">
+<msg time="2025-06-19T02:20:13.902108" level="INFO">Clicking button 'xpath=//button[normalize-space()='Create Account']'.</msg>
+<arg>xpath=//button[normalize-space()='Create Account']</arg>
+<doc>Clicks the button identified by ``locator``.</doc>
+<status status="PASS" start="2025-06-19T02:20:13.901681" elapsed="0.078143"/>
+</kw>
+<kw name="Wait Until Element Contains" owner="SeleniumLibrary">
+<msg time="2025-06-19T02:20:24.753654" level="INFO" html="true">&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td colspan="3"&gt;&lt;a href="selenium-screenshot-7.png"&gt;&lt;img src="selenium-screenshot-7.png" width="800px"&gt;&lt;/a&gt;</msg>
+<msg time="2025-06-19T02:20:24.753830" level="FAIL">Element 'xpath=//div[@role="alert"]' did not get text 'email: Email already exists' in 10 seconds.</msg>
+<arg>xpath=//div[@role="alert"]</arg>
+<arg>email: Email already exists</arg>
+<arg>timeout=10s</arg>
+<doc>Waits until the element ``locator`` contains ``text``.</doc>
+<status status="FAIL" start="2025-06-19T02:20:13.980656" elapsed="10.775128">Element 'xpath=//div[@role="alert"]' did not get text 'email: Email already exists' in 10 seconds.</status>
+</kw>
+<kw name="Capture Page Screenshot" owner="SeleniumLibrary" type="TEARDOWN">
+<msg time="2025-06-19T02:20:25.462347" level="INFO" html="true">&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td colspan="3"&gt;&lt;a href="selenium-screenshot-8.png"&gt;&lt;img src="selenium-screenshot-8.png" width="800px"&gt;&lt;/a&gt;</msg>
+<doc>Takes a screenshot of the current page and embeds it into a log file.</doc>
+<status status="PASS" start="2025-06-19T02:20:24.756361" elapsed="0.706221"/>
+</kw>
+<doc>แสดง “Email already exists” เมื่อใช้อีเมลที่ลงทะเบียนแล้ว</doc>
+<status status="FAIL" start="2025-06-19T02:20:08.283631" elapsed="17.179519">Element 'xpath=//div[@role="alert"]' did not get text 'email: Email already exists' in 10 seconds.</status>
+</test>
+<kw name="Close Browser" owner="SeleniumLibrary" type="TEARDOWN">
+<doc>Closes the current browser.</doc>
+<status status="PASS" start="2025-06-19T02:20:25.464705" elapsed="2.205824"/>
+</kw>
+<status status="FAIL" start="2025-06-19T02:20:06.247124" elapsed="21.423488"/>
+</suite>
+<statistics>
+<total>
+<stat pass="0" fail="1" skip="0">All Tests</stat>
+</total>
+<tag>
+</tag>
+<suite>
+<stat name="Register Test" id="s1" pass="0" fail="1" skip="0">Register Test</stat>
+</suite>
+</statistics>
+<errors>
+</errors>
+</robot>

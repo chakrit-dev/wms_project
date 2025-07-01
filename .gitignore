@@ -1,0 +1,42 @@
+# === Python ===
+__pycache__/
+*.py[cod]
+*.sqlite3
+*.env
+*.db
+.env.*
+venv/
+.idea/
+*.log
+
+# === FastAPI/Uvicorn logs ===
+*.pid
+*.log
+
+# === Node ===
+node_modules/
+dist/
+build/
+
+# === Vite / React ===
+.vite/
+*.local
+*.DS_Store
+*.lock
+.env.local
+.env.development
+.env.production
+
+# === VS Code ===
+.vscode/
+
+# === Coverage / Testing ===
+.coverage
+htmlcov/
+coverage.xml
+pytest_cache/
+
+# === Database / Export ===
+*.bak
+*.sql
+*.csv
