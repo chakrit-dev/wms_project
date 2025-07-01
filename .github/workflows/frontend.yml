@@ -33,6 +33,5 @@ jobs:
           azure_static_web_apps_api_token: ${{ secrets.AZURE_STATIC_WEB_APPS_API_TOKEN }}
           repo_token: ${{ secrets.GITHUB_TOKEN }}
           action: "upload"
-          #### แก้ตรงนี้ให้ชี้ path ที่ build แล้ว ####
-          app_location: "/wms_frontend"
-          output_location: "dist"
+          app_location: "/wms_frontend"      # ✅ โฟลเดอร์ที่มี package.json
+          output_location: "dist"            # ✅ โฟลเดอร์ผลลัพธ์จาก Vite build
