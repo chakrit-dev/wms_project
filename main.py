@@ -1,7 +1,6 @@
 from fastapi import FastAPI, Request
 from fastapi.middleware.cors import CORSMiddleware
 from app.database import Base, engine
-from app.config import CORS_ORIGINS
 import app.models  # SQLAlchemy scan model
 
 # Router Imports
@@ -19,16 +18,20 @@ logger = logging.getLogger(__name__)
 
 app = FastAPI()
 
-# ✅ CORS config จาก config.py
+# ✅ CORS config (แบบกำหนดตรง ๆ)
+origins = [
+    "http://localhost:5173",
+    "https://ashy-grass-0d8e88500.1.azurestaticapps.net",  # Azure Static Web App URL
+]
+
 app.add_middleware(
     CORSMiddleware,
-    allow_origins=CORS_ORIGINS,
+    allow_origins=origins,
     allow_credentials=True,
     allow_methods=["*"],
     allow_headers=["*"],
 )
-print("✅ Loaded CORS_ORIGINS =", CORS_ORIGINS)
-
+print("✅ Loaded CORS_ORIGINS =", origins)
 
 # Middleware log requests
 @app.middleware("http")
