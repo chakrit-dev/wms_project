@@ -27,6 +27,7 @@ FRONTEND_URL = os.getenv("FRONTEND_URL", "http://localhost:5173")
 # รับหลายโดเมนโดยคั่นด้วย comma
 CORS_ORIGINS = os.getenv("CORS_ORIGINS", "http://localhost:5173,https://ashy-grass-0d8e88500.1.azurestaticapps.net")
 CORS_ORIGINS = [origin.strip() for origin in CORS_ORIGINS.split(",") if origin.strip()]
+print("✅ CORS_ORIGINS from config:", CORS_ORIGINS)
 
 # ─────────────────────── ENVIRONMENT MODE ───────────────────────
 APP_ENV = os.getenv("APP_ENV", "prod")
