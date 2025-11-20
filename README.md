@@ -39,6 +39,6 @@
 ## ผู้พัฒนา
 
 ชาคริต เตชะศิลปภักดี  
-Email: chakrit@example.com  
+Email: chakrit.tec@gmail.com  
 GitHub: https://github.com/chakrit-dev  
 Portfolio: ดูได้จากลิงก์ PDF ที่แนบไว้ด้านบน
